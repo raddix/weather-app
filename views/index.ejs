@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How hot it is</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+        <h1 class="title is-1 has-text-centered">
+            How hot it is?
+        </h1>
+        <form action="/" method="post">
+            <div class="columns has-text-centered">
+                <div class="column title is-3">
+                  City Name :
+                </div>
+                <div class="column">
+                    <input name="city" class="input is-primary" type="text" placeholder="Enter City">
+                </div>
+              </div>
+
+              <div class="columns has-text-centered">
+                <div class="column title is-3">
+                  Details Needed :
+                </div>
+                <div class="column">
+                    Tempreature (Obviously) <input type="checkbox" checked=checked disabled><br>
+                    Pressure <input type="checkbox" checked=checked disabled> <br>
+                    Humidity <input type="checkbox" checked=checked disabled> <br>
+                    Description <input type="checkbox" checked=checked disabled>  
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <input type="submit" class="button is-primary" value="Tell me weather">
+            </div>
+        </form>
+        <br><br>
+        
+        <% if(result != null) { %>
+        
+            <div class="has-text-centered title is-2">
+                Result
+            </div>
+            <div class="columns">
+            <div class="column title is-4">
+                Tempreature (Celcius) :
+              </div>
+              <div class="column title is-4">
+                <%= tempreature %>
+              </div>
+            </div>
+    
+            <div class="columns">
+              <div class="column title is-4">
+                Pressure :
+              </div>
+              <div class="column title is-4">
+                <%= pressure %> Pa
+              </div>
+            </div>
+    
+            <div class="columns">
+              <div class="column title is-4">
+                Humidity :
+              </div>
+              <div class="column title is-4">
+                <%= humidity %>
+              </div>
+            </div>
+            
+
+            <div class="columns">        
+              <div class="column title is-4">
+                Description :
+              </div>
+              <div class="column title is-4">
+                <%= description %>
+              </div>
+            </div>
+      <%  } %>
+        
+        <% if(error !=null) {%>    
+        <div class="has-text-centered title is-2">
+            Error ! Please try again
+        </div>
+        <% } %>
+    </div>
+  </section>
+  </body>
+</html>
